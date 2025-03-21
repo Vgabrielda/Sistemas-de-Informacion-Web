@@ -1,0 +1,12 @@
+ul {
+    list-style-type: square; 
+    padding-left: 20px; 
+}
+
+li {
+    color: rgb(47, 48, 45); 
+    font-size: 20px; 
+    border: 15px solid rgb(236, 17, 17); 
+    margin: 8px; 
+    padding: 12px; 
+}
