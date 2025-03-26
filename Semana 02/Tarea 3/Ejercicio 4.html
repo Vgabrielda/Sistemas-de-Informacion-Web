@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida Personalizada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bienvenida Personalizada</h2>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Ingrese su nombre">
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" placeholder="Ingrese su apellido">
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" placeholder="Ingrese su edad">
+        <button onclick="generarMensaje()">Mostrar Mensaje</button>
+        <h3 id="mensaje"></h3>
+    </div>
+    
+    <script>
+        function generarMensaje() {
+            let nombre = document.getElementById('nombre').value.trim();
+            let apellido = document.getElementById('apellido').value.trim();
+            let edad = document.getElementById('edad').value.trim();
+            
+            if (nombre === "" || apellido === "" || edad === "") {
+                alert('Por favor, complete todos los campos.');
+                return;
+            }
+            
+            document.getElementById('mensaje').innerText = `¡Buenas, ${nombre} ${apellido}! Tienes ${edad} años. ¡Bienvenido a este sitio!`;
+        }
+    </script>
+</body>
+</html>
