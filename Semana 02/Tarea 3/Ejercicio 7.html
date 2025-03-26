@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IVA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Calculadora de Precio sin IVA</h2>
+        <label for="precioConIVA">Costo del producto con IVA:</label>
+        <input type="number" id="precioConIVA" placeholder="Ingrese el costo con IVA">
+        <button onclick="calcularSinIVA()">Calcular</button>
+        <h3 id="mensaje"></h3>
+    </div>
+    
+    <script>
+        function calcularSinIVA() {
+            let precioConIVA = parseFloat(document.getElementById('precioConIVA').value.trim());
+            
+            if (isNaN(precioConIVA) || precioConIVA <= 0) {
+                alert('Por favor, ingrese un valor válido.');
+                return;
+            }
+            
+            let precioSinIVA = (precioConIVA / 1.1).toFixed(2);
+            let valorIVA = (precioConIVA - precioSinIVA).toFixed(2);
+            
+            document.getElementById('mensaje').innerText = `Precio sin IVA: $${precioSinIVA} | Valor del IVA (10%): $${valorIVA}`;
+        }
+    </script>
+</body>
+</html>
